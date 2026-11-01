@@ -65,18 +65,18 @@ vim.keymap.set("n", "]h", function()
     if vim.wo.diff then
         vim.cmd.normal({ "]c", bang = true })
     else
-        requite("gitsigns").nav_hunk("next")
+        require("gitsigns").nav_hunk("next")
     end
 end, { desc = "Next Git hunk" })
 vim.keymap.set("n", "[h", function()
     if vim.wo.diff then
         vim.cmd.normal({ "[c", bang = true })
     else
-        requite("gitsigns").nav_hunk("prev")
+        require("gitsigns").nav_hunk("prev")
     end
 end, { desc = "Previous Git hunk" })
-vim.keymap.set("n", "]H", function() requite("gitsigns").nav_hunk("last") end, { desc = "Last Git hunk" })
-vim.keymap.set("n", "[H", function() requite("gitsigns").nav_hunk("first") end, { desc = "First Git hunk" })
+vim.keymap.set("n", "]H", function() require("gitsigns").nav_hunk("last") end, { desc = "Last Git hunk" })
+vim.keymap.set("n", "[H", function() require("gitsigns").nav_hunk("first") end, { desc = "First Git hunk" })
 -- Preview the current hunk
 vim.keymap.set("n", "<leader>hp", function() require("gitsigns").preview_hunk() end, { desc = "Preview Git hunk" })
 -- Stage the current hunk
