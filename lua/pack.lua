@@ -15,8 +15,8 @@ vim.pack.add({
     "https://github.com/MunifTanjim/nui.nvim",
     -- optional, but recommended
     "https://github.com/nvim-tree/nvim-web-devicons",
-    -- test
-    { src = "https://github.com/echasnovski/mini.bufremove" }
+    {src = "https://github.com/echasnovski/mini.bufremove"},
+    "https://github.com/lewis6991/gitsigns.nvim"
 })
 
 -- =========================================

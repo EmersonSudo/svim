@@ -58,3 +58,30 @@ vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 -- =========================================
 vim.keymap.set("n", "ZZ", "<Cmd>wqa<CR>", { desc = "Save all files and quit Neovim", })
 vim.keymap.set("n", "ZQ", "<Cmd>qa!<CR>", { desc = "Quit Neovim without saving", })
+-- =========================================
+-- Git Signs Keymaps
+-- =========================================
+vim.keymap.set("n", "]h", function()
+    if vim.wo.diff then
+        vim.cmd.normal({ "]c", bang = true })
+    else
+        requite("gitsigns").nav_hunk("next")
+    end
+end, { desc = "Next Git hunk" })
+vim.keymap.set("n", "[h", function()
+    if vim.wo.diff then
+        vim.cmd.normal({ "[c", bang = true })
+    else
+        requite("gitsigns").nav_hunk("prev")
+    end
+end, { desc = "Previous Git hunk" })
+vim.keymap.set("n", "]H", function() requite("gitsigns").nav_hunk("last") end, { desc = "Last Git hunk" })
+vim.keymap.set("n", "[H", function() requite("gitsigns").nav_hunk("first") end, { desc = "First Git hunk" })
+-- Preview the current hunk
+vim.keymap.set("n", "<leader>hp", function() require("gitsigns").preview_hunk() end, { desc = "Preview Git hunk" })
+-- Stage the current hunk
+vim.keymap.set("n", "<leader>hs", function() require("gitsigns").stage_hunk() end, { desc = "Stage Git hunk" })
+-- Reset the current hunk (destructive!)
+vim.keymap.set("n", "<leader>hr", function() require("gitsigns").reset_hunk() end, { desc = "Reset Git hunk" })
+-- Show blame for the current line
+vim.keymap.set("n", "<leader>hb", function() require("gitsigns").blame_line({ full = true }) end, { desc = "Show Git blame" })
