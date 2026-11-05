@@ -85,3 +85,9 @@ vim.keymap.set("n", "<leader>hs", function() require("gitsigns").stage_hunk() en
 vim.keymap.set("n", "<leader>hr", function() require("gitsigns").reset_hunk() end, { desc = "Reset Git hunk" })
 -- Show blame for the current line
 vim.keymap.set("n", "<leader>hb", function() require("gitsigns").blame_line({ full = true }) end, { desc = "Show Git blame" })
+-- =========================================
+-- LSP Keymaps
+-- =========================================
+-- Code Diagnosis
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
+-- Also, remember tha `[d` and `]d` navigates between erros

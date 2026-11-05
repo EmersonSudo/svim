@@ -16,7 +16,9 @@ vim.pack.add({
     -- optional, but recommended
     "https://github.com/nvim-tree/nvim-web-devicons",
     {src = "https://github.com/echasnovski/mini.bufremove"},
-    "https://github.com/lewis6991/gitsigns.nvim"
+    "https://github.com/lewis6991/gitsigns.nvim",
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://codeberg.org/ziglang/zig.vim" },
 })
 
 -- =========================================

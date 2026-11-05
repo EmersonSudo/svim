@@ -77,3 +77,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.hl.on_yank()
     end,
 })
+-- =========================================
+-- Format Zig files on save
+-- =========================================
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.zig",
+    callback = function(ev)
+        vim.lsp.buf.format({
+            bufnr = ev.buf,
+            filter = function(client)
+                return client.name == "zls"
+            end,
+        })
+    end,
+})

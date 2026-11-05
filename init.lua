@@ -3,6 +3,7 @@ require("options")
 require("keymaps")
 require("pack")
 require("commands")
+require("config.lsp")
 
 -- =========================================
 -- Color and Theme
